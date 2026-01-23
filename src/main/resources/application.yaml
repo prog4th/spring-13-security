@@ -6,7 +6,7 @@ spring:
     auto-index-creation: true
 logging:
   pattern:
-    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%X{traceId}] - %msg%n"
+    console: "%.-1level[%X{traceId}] %-28logger{0} %-40msg [%thread] %d{HH:mm:ss.SSS}%n"
   level:
     org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: OFF
 jwt:
