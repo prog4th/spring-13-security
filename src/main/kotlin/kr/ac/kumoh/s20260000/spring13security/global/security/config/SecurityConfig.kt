@@ -62,7 +62,8 @@ class SecurityConfig {
             logout { disable() }
 
             authorizeHttpRequests {
-                authorize( "/api/v1/auth/profile", hasRole("ADMIN")) // permitAll 보다 앞에 나와야 함
+                //authorize( "/api/v1/auth/profile", hasRole("ADMIN")) // permitAll 보다 앞에 나와야 함
+                authorize( "/api/v1/auth/profile", authenticated) // permitAll 보다 앞에 나와야 함
                 authorize("/api/v1/auth/**", permitAll) // 로그인, 회원가입 경로는 허용
                 authorize(anyRequest, authenticated) // 나머지는 인증 필요
             }
